@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IT Технологии - Анимация</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+  }
+  #container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Общие стили для SVG элементов */
+  .icon {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin: 10px;
+  }
+  
+  /* Тексты */
+  .text-block {
+    opacity: 0;
+    max-width: 600px;
+    text-align: center;
+    margin: 15px auto;
+    font-size: 1.2em;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="container">
+  
+  <!-- Иконки (8 SVG) -->
+  
+  <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+    <!-- Облако -->
+    <div class="icon" id="icon1">
+      <svg viewBox="0 0 64 64" width="60" height="60" fill="#3b82f6" xmlns="http://www.w3.org/2000/svg">
+        <path d="M48.7,24.3a12,12,0,00-11-8A12.1,12.1,0,0032,28a11.9,11.9,0,00-11-8A8.9,8.9,0,0012,36a8.9,8.9,0,0016.7,4A7.9,7.9,0,0032,44a8.1,8.1,0,006-14Z"/>
+      </svg>
+    </div>
+    
+    <!-- Код -->
+    <div class="icon" id="icon2">
+      <svg viewBox="0 0 64 64" width="60" height="60" fill="#10b981" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="24" width="44" height="16" rx="2" ry="2"/>
+        <polygon points="16,20   ... "/> <!-- Можно заменить на более сложную иконку -->
+        <path d="M24 ,12 L40 ,12 L40 ,52 L24 ,52 Z"/>
+      </svg>
+    </div>
+    
+    <!-- Сервер -->
+    <div class="icon" id="icon3">
+      <svg viewBox="0 0 64 64" width="60" height="60" fill="#ef4444" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="10" width="32" height="44" rx="4"/>
+        <circle cx="32" cy="20" r="2"/>
+        <circle cx="32" cy="30" r="2"/>
+        <circle cx="32" cy="40" r="2"/>
+      </svg>
+    </div>
+    
+    <!-- Wi-Fi -->
+    <div class='icon' id='icon4'>
+      <svg viewBox='0 0 64 64' width='60' height='60' fill='#8b5cf6' xmlns='http://www.w3.org/2000/svg'>
+        <path d='M32 44c-4.4183 0-8-3.5817-8-8h16c0 4.4183-3.5817 
+                 8-8 8z'/>
+        <path d='M16.6863 
+                 ... '/> <!-- Можно заменить на более точную иконку -->
+      </svg>
+    </div>
+    
+    <!-- База данных -->
+    <div class='icon' id='icon5'>
+      <svg viewBox='0 0 64 64' width='60' height='60' fill='#f59e0b' xmlns='http://www.w3.org/2000/svg'>
+        <ellipse cx='32' cy='20' rx='14' ry='6'/>
+        <ellipse cx='32' cy='36' rx='14' ry='6'/>
+        <ellipse cx='32' cy='52' rx='14' ry='6'/>
+        <path d='M18 
+                 ... '/> <!-- Можно заменить на более точную иконку -->
+      </svg>
+    </div>
+    
+     <!-- Компьютер -->
+     <div class='icon' id='icon6'>
+       <svg viewBox='0 0 64 64' width='60' height='60' fill='#6366f1' xmlns='http://www.w3.org/2000/svg'>
+         <rect x='10' y='20' width='44' height='24'/>
+         <rect x='22' y='44' width='20' height='4'/>
+       </svg>
+     </div>
+
+     <!-- Клавиатура -->
+     <div class='icon' id='icon7'>
+       <svg viewBox='0 0 64 64' width='60' height='60' fill='#10b981' xmlns='http://www.w3.org/2000/svg'>
+         <rect x='12' y='20' width='40' height='16'/>
+         <!-- Можно добавить кнопки внутри -->
+       </svg>
+     </div>
+
+     <!-- График или диаграмма -->
+     <div class='icon' id='icon8'>
+       <svg viewBox='0 0 64 64' width='60' height ='60 ' fill='#ec4899'
+            xmlns ='http://www.w3.org/2000/svg'>
+         <polyline points ='10 ,50   ... ' stroke='#ec4899'
+                   stroke-width ='4'
+                   fill ='none'/>
+         <!-- Можно заменить на более точную иконку -->
+       </svg>
+     </div>
+   </div>
+
+   <!-- Дополнительные тексты (три блока) -->
+
+   <div class ="text-block " id ="text1">Инновационные решения для бизнеса</div>
+   <div class ="text-block " id ="text2">Облачные технологии и безопасность</div>
+   <div class ="text-block " id ="text3">Разработка программного обеспечения</div>
+
+</div>
+
+<script>
+// Общее время анимации
+const duration =10000; // миллисекунды
+const startTime = performance.now();
+
+function animate() {
+ const now = performance.now();
+ const elapsed = now - startTime;
+ const progress = Math.min(elapsed / duration ,1);
+
+ // Анимация появления и масштабирования иконок
+ const icons = [
+   document.getElementById('icon1'),
+   document.getElementById('icon2'),
+   document.getElementById('icon3'),
+   document.getElementById('icon4'),
+   document.getElementById('icon5'),
+   document.getElementById('icon6'),
+   document.getElementById('icon7'),
+   document.getElementById('icon8')
+ ];
+
+ // Пошаговая анимация для каждой группы
+ for (let i=0; i<icons.length; i++) {
+   const delayFactor = i * (duration / icons.length); // равномерное распределение
+   const localProgress = Math.min(Math.max((elapsed - delayFactor) / (duration / icons.length), 
+                                               // от нуля до единицы
+                                               ( i===icons.length -1 ?1 : (elapsed - delayFactor)/(duration / icons.length))), 
+                                               // ограничение
+                                               1);
+   
+   if (localProgress > -0.2 && localProgress <=1) {
+     // Плавное появление
+     icons[i].style.opacity= Math.max( (localProgress + .2)*5 ,  // сдвиг для начала появления
+                                        // чтобы не было видно до времени
+                                        ( localProgress >= - .2 ? '1':'') );
+     // Масштабируем чуть-чуть для эффекта живости
+     icons[i].style.transform= `scale(${Math.min(1,.5 + localProgress* .5)})`;
+   }
+ }
+
+ // Тексты появляются чуть позже
+ const texts = [
+   document.getElementById('text1'),
+   document.getElementById('text2'),
+   document.getElementById('text3')
+ ];
+
+ // Текстовые блоки начинают появляться после половины времени
+ for (let j=0; j<texts.length; j++) {
+   const textDelayStart = duration* (j+1)/4; // например через четверть времени
+   if (elapsed > textDelayStart) {
+     const tProgress = Math.min((elapsed - textDelayStart)/(duration/4),1);
+     texts[j].style.opacity= tProgress.toString();
+     texts[j].style.transform= `translateY(${(1 - tProgress)*20}px)`; // чуть вниз при появлении
+   }
+ }
+
+ if (progress<1) {
+   requestAnimationFrame(animate);
+ }
+}
+
+animate();
+</script>
+
+</body>
+</html>

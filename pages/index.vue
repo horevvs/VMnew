@@ -11,8 +11,8 @@
         </H2>
       </div>
     </div>
-    <div class="h-96 container mx-auto">
-      Тут будет анимация
+    <div class="h-96 container mx-auto -2">
+   
     </div>
     <hr class=" border-blue-300 border-1" />
     <div class="h-96mx-auto">
@@ -54,7 +54,7 @@
                   качество работы.</p>
               </div>
               <div
-                class="p-5 w-2/5 border-b-4 border-l-4 border-blue-300 group p-5 w-3/5 border-b-4 border-r-4 border-blue-300 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
+                class="border-b-4 border-l-4 border-blue-300 group p-5 w-3/5 border-r-2 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
                 <p class="text-2xl font-bold">Ответственность</p>
                 <p class="text-lg">Мы несем ответственость за результаты нашей работы, стремимся к устойчивому развитию.
                 </p>
@@ -63,13 +63,13 @@
             </div>
             <div class="flex h-42 ">
               <div
-                class="p-5 w-1/2 border-1 border-r-4 border-t-4 border-blue-300 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
+                class="p-5 w-1/2 border-1 border-r-4 border-t-2 border-blue-300 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
                 <p class="text-2xl  font-bold">Прозрачность</p>
                 <p class="text-lg">Открытость в общении в отношении к Вам.
                 </p>
               </div>
               <div
-                class="p-5 w-1/2 border-l-4  border-r-4 border-t-4 border-blue-300 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
+                class="p-5 w-1/2 border-l-4  border-r-2 border-t-2 border-blue-300 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
                 <p class="text-2xl   font-bold">Индивидуальных подход</p>
                 <p class="text-lg">Принимаем Ваши потребности и создаем решения. которые максимольно соответствуют
                   ожиданиям.
@@ -78,7 +78,7 @@
             </div>
           </div>
           <div
-            class=" p-5 border-8 border-blue-300 w-1/3 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
+            class=" p-5 border-7 border-blue-300 w-1/3 transition-all duration-300 hover:bg-blue-300 hover:text-slate-50">
             <p class="text-2xl font-bold">Весь спектр услуг</p>
             <p class="text-lg"> Мы предлагаем все необходимые решения для вашего бизнеса в одной компании. от разработки
               сайта до сопровождения после внедрения продукта. </p>
@@ -125,12 +125,12 @@
     <div class="flex justify-center">
       <rainbow />
       <uplink />
-     
+
     </div>
 
     <send_msg />
 
-    
+
 
   </div>
 </template>
@@ -154,8 +154,29 @@ html {
 }
 
 * {
-  scroll-margin-top: 250px; /* или любой нужный вам отступ */
+  scroll-margin-top: 250px;
+  /* или любой нужный вам отступ */
+}
+
+
+/* Стиль для анимационного элемента */
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background-color: #3490dc;
+  /* голубой цвет */
+  margin: auto;
+  animation: moveUpDown 2s infinite alternate ease-in-out;
+}
+
+/* Анимация */
+@keyframes moveUpDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
 }
 </style>
-
-
