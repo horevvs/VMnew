@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown">
         <button class="text-2xl head">Услуги</button>
-        <div class="dropdown-content">
+        <div class="dropdown-content w-72  ">
             <div class="submenu">
                 <a href="#">Подменю 1-2</a>
                 <!-- Вложенное подменю -->
@@ -22,8 +22,8 @@
                 <a href="#">Подменю 1-2</a>
                 <!-- Вложенное подменю -->
                 <div class="sub-dropdown">
-                    <a href="#">Подподменю 3</a>
-                    <a href="#">Подподменю 4</a>
+                    <a href="#">Подподменю 5</a>
+                    <a href="#">Подподменю 6</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+  
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
