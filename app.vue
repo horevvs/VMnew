@@ -5,3 +5,7 @@
     <myfooter />
   </NuxtLayout>
 </template>
+
+<style>
+@import url("~/assets/css/first.css");
+</style>

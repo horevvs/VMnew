@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="h-96 container mx-auto -2">
-   
+
     </div>
     <hr class=" border-blue-300 border-1" />
     <div class="h-96mx-auto">
@@ -23,7 +23,7 @@
         <div class="container">
           <Carousel class="my-12 px-12" :transition="1000" v-bind="carouselConfig">
             <Slide class="px-1" v-for="slide in store.images" :key="slide">
-              <div class="h-68 w-72 rounded-3xl  bg-sky-100 shadow-xl">
+              <div class="h-68 w-72 rounded-3xl bg-sky-100 shadow-xl ">
                 <img :src="slide.img" class="">
                 <p class="mx-5 text-lg mt-2 font-bold ">{{ slide.type }} </p>
                 <p class="mx-5 text-lg font-normal">{{ slide.long }}</p>
@@ -95,43 +95,34 @@
         выделяться.
       </div>
     </div>
-    <div class="text-xl mt-2 font-black  mx-auto container flex flex-wrap">
-      <div class="h-40 w-1/3 flex p-5 transition-all duration-500 hover:scale-110 ">
-        <img src="../public/images/streamline_business-idea-money-solid.png" alt="" class="">
-        <p class="mt-12 mx-5 text-xl head">Малый Бизнес</p>
-      </div>
-      <div class="h-40 w-1/3 flex  p-5 transition-all duration-500 hover:scale-110">
-        <img src="../public/images/famicons_business-sharp.png" alt="" class="">
-        <p class="mt-12 mx-5 text-xl head">Средний Бизнес</p>
-      </div>
-      <div class="h-40 w-1/3 flex  p-5 transition-all duration-500 hover:scale-110">
-        <img src="../public/images/ic_round-real-estate-agent.png" alt="" class="">
-        <p class="mt-12 mx-5 text-xl head">Гос. организации</p>
-      </div>
-      <div class="h-40 w-1/3 flex  p-5 transition-all duration-500 hover:scale-110">
-        <img src="../public/images/fa-solid_business-time.png" alt="" class="">
-        <p class="mt-12 mx-5 text-xl head">Стартапы</p>
-      </div>
-      <div class="h-40 w-1/3 flex  p-5 transition-all duration-500 hover:scale-110">
-        <img src="../public/images/tdesign_shop-filled.png" alt="" class="">
-        <p class="mt-12 mx-5 text-xl head">Сетевые магазины</p>
-      </div>
-      <div class="h-40 w-1/3 flex  p-5 transition-all duration-500 hover:scale-110">
-        <img src="../public/images/streamline_business-handshake-solid.png" alt="" class="">
-        <p class="mt-12 mx-5 text-xl head">Не коммерческие организации</p>
+  
+    <div class="text-xl mt-2 font-black  mx-auto  container flex flex-wrap ">
+      <div v-for="(index) in store.blocks2" :key="index" @mouseenter="setActive(index)" @mouseleave="clearActive"
+        :class="[
+          ' w-[33%]   transition-opacity duration-500 cursor-pointer',
+          {
+            'opacity-100': !activeIndex || activeIndex === index,
+            'opacity-[0.3]': activeIndex && activeIndex !== index,
+          }
+        ]">
+
+        <div class="  flex justify-center p-5 transition-all duration-1000 hover:scale-110 group">
+          <img :src="index.item_img" class="">
+          <p class="mt-12 mx-5 text-xl head  group-hover:hidden">{{index.item_text_before  }}</p>
+          <p class="mt-12 mx-5 text-xl head hidden group-hover:block">{{index.item_text_after  }}</p>
+        </div>
+    
+
       </div>
     </div>
+
+
     <hr class=" border-blue-300 border-1 " />
     <div class="flex justify-center">
       <rainbow />
       <uplink />
-
     </div>
-
     <send_msg />
-
-
-
   </div>
 </template>
 
@@ -146,37 +137,17 @@ const carouselConfig = {
   itemsToShow: 4.5,
   wrapAround: true,
 }
+
+import { ref } from 'vue';
+
+
+const activeIndex = ref(null);
+
+function setActive(index) {
+  activeIndex.value = index;
+}
+
+function clearActive() {
+  activeIndex.value = null;
+}
 </script>
-
-<style>
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  scroll-margin-top: 250px;
-  /* или любой нужный вам отступ */
-}
-
-
-/* Стиль для анимационного элемента */
-.animated-box {
-  width: 100px;
-  height: 100px;
-  background-color: #3490dc;
-  /* голубой цвет */
-  margin: auto;
-  animation: moveUpDown 2s infinite alternate ease-in-out;
-}
-
-/* Анимация */
-@keyframes moveUpDown {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(50px);
-  }
-}
-</style>

@@ -1,0 +1,82 @@
+.hover-image {
+    position: absolute;
+    top: -50px;
+    /* настройте позицию по необходимости */
+    left: calc(100% + 10px);
+    width: 100px;
+    opacity: 0;
+    /* изначально скрыто */
+    transition: opacity 1.3s ease;
+    /* плавное появление */
+}
+
+.semi-circle {
+    width: 550px;
+    /* ширина */
+    height: 270px;
+
+    border-top-left-radius: 275px;
+    /* скругление левого верхнего угла */
+    border-top-right-radius: 275px;
+    /* скругление правого верхнего угла */
+}
+
+.semi-circle2 {
+    width: 270px;
+    /* ширина */
+    height: 136px;
+    border-top-left-radius: 135px;
+    /* скругление левого верхнего угла */
+    border-top-right-radius: 135px;
+    /* скругление правого верхнего угла */
+    overflow: hidden;
+    /* скрыть лишнее, если нужно */
+}
+
+
+/* Показывать изображение при наведении */
+.hover-container:hover .hover-image {
+    opacity: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    scroll-margin-top: 250px;
+    /* или любой нужный вам отступ */
+}
+
+
+/* Стиль для анимационного элемента */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3490dc;
+    /* голубой цвет */
+    margin: auto;
+    animation: moveUpDown 2s infinite alternate ease-in-out;
+}
+
+/* Анимация */
+@keyframes moveUpDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(50px);
+    }
+}
+
+/* Стиль для блока */
+.fixed-block {
+    top: 50%;
+    /* отступ сверху */
+    right: 20px;
+    /* отступ справа */
+    width: 50px;
+    height: 50px;
+    z-index: 500;
+}
