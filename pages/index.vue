@@ -99,7 +99,7 @@
     <div class="text-xl mt-2 font-black  mx-auto  container flex flex-wrap ">
       <div v-for="(index) in store.blocks2" :key="index" @mouseenter="setActive(index)" @mouseleave="clearActive"
         :class="[
-          ' w-[33%]    transition-opacity duration-500 cursor-pointer',
+          ' w-[33%]  my-12  transition-opacity duration-500 cursor-pointer',
           {
             'opacity-100': !activeIndex || activeIndex === index,
             'opacity-[0.3]': activeIndex && activeIndex !== index,
@@ -132,7 +132,7 @@
 import { useCounterStore } from '@/store/store'
 const store = useCounterStore()
 import 'vue3-carousel/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide,  Navigation } from 'vue3-carousel'
 const carouselConfig = {
   itemsToShow: 4.5,
   wrapAround: true,
