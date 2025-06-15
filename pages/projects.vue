@@ -1,6 +1,6 @@
 <template>
     <div class="text-5xl">
-    Статьи
+    проекты
  
     </div>
   </template>

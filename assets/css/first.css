@@ -35,7 +35,7 @@
 
 
 /* Показывать изображение при наведении */
-.hover-container:hover .hover-image {
+.hover-container:hover.hover-image {
     opacity: 1;
 }
 

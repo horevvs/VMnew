@@ -1,7 +1,7 @@
 <template >
   <NuxtLayout class="bg-slate-100">
     <myheader />
-    <NuxtPage />
+    <NuxtPage class="pt-24" />
     <myfooter />
   </NuxtLayout>
 </template>

@@ -99,7 +99,7 @@
     <div class="text-xl mt-2 font-black  mx-auto  container flex flex-wrap ">
       <div v-for="(index) in store.blocks2" :key="index" @mouseenter="setActive(index)" @mouseleave="clearActive"
         :class="[
-          ' w-[33%]   transition-opacity duration-500 cursor-pointer',
+          ' w-[33%]    transition-opacity duration-500 cursor-pointer',
           {
             'opacity-100': !activeIndex || activeIndex === index,
             'opacity-[0.3]': activeIndex && activeIndex !== index,
