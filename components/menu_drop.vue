@@ -6,7 +6,7 @@
             <div class="head  ">
                 <p class="text-xs pt-3 pl-5">Разработка</p>
                 <div class="submenu pt-2 px-5">
-                    <a href="#" class="text-slate-800 hover:text-blue-500 transition-colors duration-500">Сайты и
+                    <a href="/develop" class="text-slate-800 hover:text-blue-500 transition-colors duration-500">Сайты и
                         сервисы</a>
                     <div class="sub-dropdown bg-blue-400 text-blue-50 p-5 w-72 head_inside ">
                         <p class="text-xs"> Что входит? </p>
