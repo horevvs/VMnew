@@ -13,9 +13,4 @@
             нами</a>
     </div>
 </template>
-<style>
-.head {
-    font-family: Montserrat, sans-serif;
-    font-weight: 700;
-}
-</style>
+
